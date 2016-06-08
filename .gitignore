@@ -1,0 +1,4 @@
+*.pyc
+env
+*.pkl
+db.sqlite3
