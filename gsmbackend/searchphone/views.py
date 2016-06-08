@@ -8,11 +8,11 @@ from .models import searchByRank
 
 @api_view(['GET'])
 def index(request):
-    requiredParams = ['wc', 'wb', 'wr', 'ws']
+    requiredParams = ['wc', 'wb', 'wr', 'ws', 'price']
     params = dict()
     for i in requiredParams:
         if i in request.query_params:
-            params[i] = float(request.query_params[i][0])
+            params[i] = str(request.query_params[i])
         else:
             params[i] = 0
     data = searchByRank(params, 10)
